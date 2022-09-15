@@ -3,11 +3,10 @@ name: Events exercices
 on:
   push:
     branches:
-      - dev
-      - main
-      - feat/**
-    branches-ignore:
-      - staging
+      - "dev"
+      - "main"
+      - "feat/**"
+      - "!staging"
     paths:
       - '**.ts'
       - 'src/**'
