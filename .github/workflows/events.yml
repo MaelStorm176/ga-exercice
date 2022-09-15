@@ -1,6 +1,16 @@
 name: Events exercices
 
 on:
+  push:
+    branches:
+      - dev
+      - main
+      - feat/**
+    branches-ignore:
+      - staging
+    paths:
+      - '**.ts'
+      - 'src/**'
   workflow_dispatch:
 
 jobs:
