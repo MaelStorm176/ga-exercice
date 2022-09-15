@@ -1,0 +1,23 @@
+name: Push & PR
+
+jobs:
+  job1:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Execute the first job
+        run: echo Je suis le premier job
+  job2:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Execute the second job
+        run: echo Je suis le deuxième job
+on:
+  push:
+  pull_request:
+    types:
+      - closed
+      - opened
